@@ -33,14 +33,29 @@ window.onload = function () {
         theme_tab.y = 100;
         scene.addChild(theme_tab);
 
+        /* theme text */
+        var theme_label = new Label('ビシソワーズ');
+        theme_label.font = THEME_FONT;
+        theme_label.x = 400;
+        theme_label.y = 150;
+        scene.addChild(theme_label);
+
         var anstab_mx = [150, 570, 150, 570];
         var anstab_my = [400, 400, 550, 550];
+        var anstab_font_mx = [200, 600, 200, 600];
+        var anstab_font_my = [440, 440, 600, 600];
         for(var i=0; i<4; i++){
             var answer_tab = new Sprite(400, 110);
             answer_tab.image = assets[ ANSWER_TAB_IMG ];
             answer_tab.x = anstab_mx[i];
             answer_tab.y = anstab_my[i];
             scene.addChild(answer_tab);
+            
+            var answer_label = new Label('じゃがいものポタージュ');
+            answer_label.font = ANSWER_FONT;
+            answer_label.x = anstab_font_mx[i];
+            answer_label.y = anstab_font_my[i];
+            scene.addChild(answer_label);
         }
         
         /* icon */
@@ -52,9 +67,13 @@ window.onload = function () {
             icon.x = 1150;
             icon.y = 175 + 125 * i;
             scene.addChild(icon);
-        }
 
-        
+            var user_label = new Label('tibim〇su');
+            user_label.font = USER_FONT;
+            user_label.x = icon.x + 130;
+            user_label.y = icon.y + 32;
+            scene.addChild(user_label);
+        }
 
     };
     game.start();
