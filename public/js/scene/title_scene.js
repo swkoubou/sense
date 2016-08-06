@@ -10,7 +10,7 @@ var TitleScene = Class.create( Scene, {
         bg.addEventListener('touchstart', function() {
             if(quizzes != null){
                 core.popScene();
-                
+                core.pushScene(new UserInfoScene());
             }
         });
 
