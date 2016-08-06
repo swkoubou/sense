@@ -5,8 +5,8 @@ ICON_IMG = "img/icon2.jpg";
 ANSWER_TAB_IMG = "img/ans.png";
 
 
-THEME_FONT = "65px Palatino";
-ANSWER_FONT = "30px Palatino";
+THEME_FONT = "50px Palatino";
+ANSWER_FONT = "20px Palatino";
 USER_FONT = "45px Palatino";
 
 var wait_start_image;

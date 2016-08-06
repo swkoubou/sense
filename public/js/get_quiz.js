@@ -20,7 +20,7 @@ function get_quiz(){
             }
 
             var user_ans_list = [];
-            for(var quiz_idx = 0; quiz_idx < quizzes.length; quiz_idx++){
+            for(var quiz_idx = 0; quiz_idx < 1; quiz_idx++){
                 var view_text = "お題: " + quizzes[ quiz_idx ].word + " のでたらめな意味を入力してください。";
                 while(true){
                     var user_ans = prompt(view_text, "");
@@ -35,6 +35,11 @@ function get_quiz(){
             alert("次の人に画面を受け渡したらOKを押してください。");
         }
         
+        theme_label.text = quizzes[0].word;
+        answer_labels[0].text = user_answers[2][0];
+        answer_labels[1].text = quizzes[0].answer;
+        answer_labels[2].text = user_answers[0][0];
+        answer_labels[3].text = user_answers[1][0];
         scene.removeChild(wait_start_image);
     }).fail(function(err){
         console.log("err.");
