@@ -1,16 +1,17 @@
 BACKGROUND_IMG = "img/background2.png";
 TITLE_IMG = "img/title.png";
-ICON_IMGS = ["img/icon.png", "img/icon2.jpg"];
+ICON_IMGS = ["img/icon2.jpg", "img/icon2.jpg"];
 GAME_THEME_TAB_IMG = "img/theme-tab.png";
 GAME_ANSWER_TAB_IMG = "img/ans.png";
 GAME_USER_BACKGROUND_IMG = "img/status.png";
+NEXT_BUTTON_IMG = "img/next_360.png";
 
 quizzes = null;
 
 window.onload = function(){
     core = new Core(1600, 800);
     core.preload(BACKGROUND_IMG, TITLE_IMG, ICON_IMGS, GAME_THEME_TAB_IMG,
-            GAME_ANSWER_TAB_IMG, GAME_USER_BACKGROUND_IMG);
+            GAME_ANSWER_TAB_IMG, GAME_USER_BACKGROUND_IMG, NEXT_BUTTON_IMG);
 
     assets = core.assets;
     scene = core.rootScene;
