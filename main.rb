@@ -11,7 +11,7 @@ ActiveRecord::Base.establish_connection(
 )
 
 get '/' do
-  Quiz.count.to_s
+  erb :index
 end
 
 get '/quiz' do
