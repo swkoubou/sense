@@ -5,16 +5,28 @@ ICON_IMG = "img/icon2.jpg";
 ANSWER_TAB_IMG = "img/ans.png";
 
 
-THEME_FONT = "65px Palatino";
-ANSWER_FONT = "30px Palatino";
+THEME_FONT = "50px Palatino";
+ANSWER_FONT = "20px Palatino";
 USER_FONT = "45px Palatino";
+
+var wait_start_image;
+
+var quizzes = [];
+
+var theme_label;
+var answer_labels = [];
+
+var user_labels = [];
+var user_answers = [];
+
 
 window.onload = function () {
     var game = new Game(1600, 800);
-
     game.preload(BACKGROUND_IMG, USERS_BACKGROUND_IMG, THEME_TAB_IMG, ICON_IMG, ANSWER_TAB_IMG); 
+    
     assets = game.assets;
     scene = game.rootScene;
+    
     game.onload = function () {
         /* bg */
         var bg = new Sprite(1600, 800);
@@ -34,7 +46,7 @@ window.onload = function () {
         scene.addChild(theme_tab);
 
         /* theme text */
-        var theme_label = new Label('ビシソワーズ');
+        theme_label = new Label('ビシソワーズ');
         theme_label.font = THEME_FONT;
         theme_label.x = 400;
         theme_label.y = 150;
@@ -56,6 +68,7 @@ window.onload = function () {
             answer_label.x = anstab_font_mx[i];
             answer_label.y = anstab_font_my[i];
             scene.addChild(answer_label);
+            answer_labels.push(answer_label);
         }
         
         /* icon */
@@ -73,8 +86,17 @@ window.onload = function () {
             user_label.x = icon.x + 130;
             user_label.y = icon.y + 32;
             scene.addChild(user_label);
+            user_labels.push(user_label);
         }
 
+
+        wait_start_image = new Sprite(1600, 800);
+        wait_start_image.image = assets[ BACKGROUND_IMG ];
+        wait_start_image.x = 0;
+        wait_start_image.y = 0;
+        scene.addChild(wait_start_image);
+
+        get_quiz();
     };
     game.start();
 }
