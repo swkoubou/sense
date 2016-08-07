@@ -2,11 +2,13 @@ BACKGROUND_IMG = "img/background.png";
 TITLE_IMG = "img/title.png";
 ICON_IMGS = ["img/icons/icon.jpg", "img/icons/mazai.jpg", "img/icons/kuma.png", "img/icons/tibi.jpg"];
 GAME_THEME_TAB_IMG = "img/theme_tab.png";
+GAME_THEME_TAB_EDGE_IMG = "img/theme_edge.png";
 GAME_ANSWER_TAB_IMG = "img/answer_tab.png";
 GAME_USER_BACKGROUND_IMG = "img/status.png";
 GAME_EDGE_IMG = "img/edge.png";
 NEXT_BUTTON_IMG = "img/next.png";
 ICON_EDGE_IMG = "img/icon_edge.png";
+
 
 quizzes = null;
 users = [];
