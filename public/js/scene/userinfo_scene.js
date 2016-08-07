@@ -56,7 +56,7 @@ var UserInfoScene = Class.create( Scene, {
         var next_button = new Sprite(250, 80);
         next_button.image = assets[ NEXT_BUTTON_IMG ];
         next_button.x = this.icons[0].x;
-        next_button.y = this.icons[this.icons.length-1].y + 75;
+        next_button.y = this.icons[this.icons.length-1].y + 100;
         next_button.addEventListener('touchstart', function(){
             user_name_str = document.getElementsByTagName("input")[0].value;
             if(user_name_str == null || user_name_str.length == 0 || user_name_str.length > 10){
