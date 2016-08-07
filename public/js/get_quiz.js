@@ -6,8 +6,11 @@ function get_quiz(){
         console.log("OK.");
         
         var parse = JSON.parse(res);
-        quizzes = parse.quizzes;
-
+        quizzes = [];
+        for(var i=0; i<parse.quizzes.length; i++){
+            quizzes.push( new Quiz( parse.quizzes[i].word, parse.quizzes[i].answer ) );
+        }
+        
     }).fail(function(err){
         console.log("err.");
         console.log(err);
