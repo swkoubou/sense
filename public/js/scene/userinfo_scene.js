@@ -73,7 +73,9 @@ var UserInfoScene = Class.create( Scene, {
                 alert("アイコンを選択してください。");
             }else{
                 // 次の画面に遷移する処理
-                console.log(user_name_str + " " + select_icon_str);
+                users.push(new User(user_name_str, select_icon_str));
+                core.popScene();
+                core.pushScene(new UserAnswerScene());
             }
         });
         this.addChild(next_button);

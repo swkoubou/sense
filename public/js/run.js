@@ -9,6 +9,7 @@ NEXT_BUTTON_IMG = "img/next.png";
 ICON_EDGE_IMG = "img/icon_edge.png";
 
 quizzes = null;
+users = [];
 
 window.onload = function(){
     core = new Core(1600, 800);
