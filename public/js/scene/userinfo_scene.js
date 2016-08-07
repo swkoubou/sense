@@ -38,6 +38,11 @@ var UserInfoScene = Class.create( Scene, {
         icon_select_label.color = "white";
         this.addChild(icon_select_label);
 
+        icon_edge = new Sprite(64,64);
+        icon_edge.image = assets[ ICON_EDGE_IMG ];
+        icon_edge.x = -100;
+        icon_edge.y = -100;
+
         this.icons = [];
         for(var i=0; i<ICON_IMGS.length; i++){
             var icon = new Sprite(64, 64);
@@ -48,10 +53,13 @@ var UserInfoScene = Class.create( Scene, {
             icon.addEventListener('touchstart', function(){
                 console.log(this.image_name);
                 select_icon_str = this.image_name;
+                icon_edge.x = this.x;
+                icon_edge.y = this.y;
             });
             this.addChild(icon);
             this.icons.push(icon);
         }
+        this.addChild(icon_edge);
 
         var next_button = new Sprite(250, 80);
         next_button.image = assets[ NEXT_BUTTON_IMG ];
