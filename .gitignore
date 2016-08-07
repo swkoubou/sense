@@ -4,3 +4,4 @@ db/schema.rb
 *.sqlite3
 .bundle/config
 Gemfile.lock
+nohup.out

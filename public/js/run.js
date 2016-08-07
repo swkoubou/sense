@@ -15,7 +15,7 @@ users = [];
 
 window.onload = function(){
     core = new Core(1600, 800);
-    core.preload(BACKGROUND_IMG, TITLE_IMG, GAME_THEME_TAB_IMG,
+    core.preload(BACKGROUND_IMG, TITLE_IMG, GAME_THEME_TAB_IMG, GAME_THEME_TAB_EDGE_IMG,
             GAME_ANSWER_TAB_IMG, GAME_USER_BACKGROUND_IMG, NEXT_BUTTON_IMG,
             GAME_EDGE_IMG, ICON_EDGE_IMG);
     for(var i=0; i<ICON_IMGS.length; i++) core.preload(ICON_IMGS[i]);

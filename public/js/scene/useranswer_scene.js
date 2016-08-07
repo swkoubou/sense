@@ -33,8 +33,8 @@ var UserAnswerScene = Class.create(Scene, {
         next_button.addEventListener('touchstart', function(){
             var inputs = document.getElementsByTagName("input");
             for(var i=0; i<inputs.length; i++){
-                if(inputs[i].value == null || inputs[i].value == "" || inputs[i].length > 50){
-                    alert("全ての項目に50文字以内で回答してください。");
+                if(inputs[i].value == null || inputs[i].value == "" || inputs[i].length > 20){
+                    alert("全ての項目に20文字以内で回答してください。");
                     return ;
                 }
             }

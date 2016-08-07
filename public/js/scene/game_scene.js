@@ -30,6 +30,12 @@ var GameScene = Class.create( Scene, {
         theme_tab.y = 100;
         this.addChild(theme_tab);
 
+        var theme_tab_edge = new Sprite(820, 220);
+        theme_tab_edge.image = assets[ GAME_THEME_TAB_EDGE_IMG ];
+        theme_tab_edge.x = 150;
+        theme_tab_edge.y = 100;
+        this.addChild(theme_tab_edge);
+        
         for(var i=0; i<users.length; i++){
             var user_view = new UserView(1150, 175+125*i, this, users[i].name, users[i].icon);
             user_views.push(user_view);
@@ -48,7 +54,7 @@ var GameScene = Class.create( Scene, {
         
         var theme_pop2 = new Label('の意味を選択してください。');
         theme_pop2.font = "32px tenderness";
-        theme_pop2.x = 600;
+        theme_pop2.x = 550;
         theme_pop2.y = 250;
         theme_pop2.width = 500;
         this.addChild(theme_pop2);
@@ -72,14 +78,19 @@ var GameScene = Class.create( Scene, {
             ans_tab.image = assets[ GAME_ANSWER_TAB_IMG ];
             ans_tab.x = ans_tab_mx[i];
             ans_tab.y = ans_tab_my[i];
+            ans_tab.index = i;
+            
             this.addChild(ans_tab);
             var answer_label = new Label(' ');
-            answer_label.font = "30px Palatino";
+            answer_label.font = "26px Palatino";
             answer_label.x = ans_tab.x + 50;
             answer_label.y = ans_tab.y + 30;
             answer_label.color = "white";
-            answer_label.addEventListener('touchstart', function(){
-                if(quizzes[now_quiz_index].solve(this.text)){
+            ans_tab.addEventListener('touchstart', function(){
+
+                var target_text = _game_scene.answer_labels[ this.index ].text;
+
+                if(quizzes[now_quiz_index].solve(target_text)){
                     user_views[answer_user_index].add_score(1);
                     alert(users[answer_user_index].name + "さん 正解です！");
                 }else{
