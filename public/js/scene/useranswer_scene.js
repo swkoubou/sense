@@ -45,8 +45,8 @@ var UserAnswerScene = Class.create(Scene, {
             }
 
             if(users.length == 3){
-                // Game画面に遷移
                 core.popScene();
+                core.pushScene(new GameScene());
             }else{
                 core.popScene();
                 core.pushScene(new UserInfoScene());
